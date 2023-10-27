@@ -1,4 +1,3 @@
-vim.notify("a\naa")
 require("options")
 require("keymaps")
 require("plugins")

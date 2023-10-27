@@ -40,9 +40,6 @@ nvim_tree.setup({
       quit_on_open = true,
     },
   }})
-  -- 自动关闭
-  vim.cmd([[
-  autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
-  ]])
+
 
 

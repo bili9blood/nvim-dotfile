@@ -51,7 +51,17 @@ require("lazy").setup({
 
   {'akinsho/toggleterm.nvim', version = "*", config = true},
 
-  {'kyazdani42/nvim-tree.lua', dependencies = 'kyazdani42/nvim-web-devicons'},
+ {
+    'kyazdani42/nvim-tree.lua',
+    dependencies = 'kyazdani42/nvim-web-devicons',
+    cmd = {
+            "NvimTreeToggle",
+            "NvimTreeOpen",
+            "NvimTreeFocus",
+            "NvimTreeFindFileToggle"
+          },
+    event = "User DirOpened"
+  },
 
   {
     "akinsho/bufferline.nvim",
