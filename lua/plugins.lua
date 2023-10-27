@@ -86,7 +86,11 @@ require("lazy").setup({
   {
     "williamboman/mason.nvim",
     config = function ()
-      require('mason').setup()
+      require('mason').setup({
+        github = {
+          download_url_template = "https://ghproxy.com/github.com/%s/releases/download/%s/%s",
+        }
+      })
     end,
   },
   "williamboman/mason-lspconfig.nvim",
@@ -120,6 +124,29 @@ require("lazy").setup({
     "jay-babu/mason-nvim-dap.nvim",
     config = function ()
       require("mason-nvim-dap").setup()
+    end,
+  },
+
+  {
+    "gerazov/toggle-bool.nvim",
+    config = function ()
+      require("toggle-bool").setup {
+        mapping = "<leader>tt",
+        additional_toggles = {
+          Yes = 'No',
+          On = 'Off',
+          ["0"] = "1",
+          Enable = 'Disable',
+          Enabled = 'Disabled',
+          First = 'Last',
+          Before = 'After',
+          Persistent = 'Ephemeral',
+          Internal = 'External',
+          Ingress = 'Egress',
+          Allow = 'Deny',
+          All = 'None',
+        }
+      }
     end,
   }
 },{

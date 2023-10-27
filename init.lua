@@ -1,3 +1,4 @@
+vim.notify("a\naa")
 require("options")
 require("keymaps")
 require("plugins")
@@ -15,3 +16,7 @@ require("config.formatter")
 require("colorscheme")
 
 require("lsp.setup")
+
+if vim.g.neovide then
+  require("neovide")
+end
