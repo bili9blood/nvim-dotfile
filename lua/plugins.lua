@@ -122,5 +122,9 @@ require("lazy").setup({
       require("mason-nvim-dap").setup()
     end,
   }
+},{
+  git = {
+    url_format = "https://ghproxy.com/github.com/%s.git"
+  }
 });
 
