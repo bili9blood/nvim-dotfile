@@ -1,11 +1,11 @@
 -- define common options
 local opts = {
-  noremap = true,      -- non-recursive
-  silent = true,       -- do not show message
+	noremap = true, -- non-recursive
+	silent = true, -- do not show message
 }
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -----------------
 -- Normal mode --
@@ -19,17 +19,22 @@ vim.keymap.set("n", "<C-u>", "9k", opts)
 vim.keymap.set("n", "<C-d>", "9j", opts)
 
 -- Better window navigation
-vim.keymap.set('n', '<A-h>', '<C-w>h', opts)
-vim.keymap.set('n', '<A-j>', '<C-w>j', opts)
-vim.keymap.set('n', '<A-k>', '<C-w>k', opts)
-vim.keymap.set('n', '<A-l>', '<C-w>l', opts)
+vim.keymap.set("n", "<A-h>", "<C-w>h", opts)
+vim.keymap.set("n", "<A-j>", "<C-w>j", opts)
+vim.keymap.set("n", "<A-k>", "<C-w>k", opts)
+vim.keymap.set("n", "<A-l>", "<C-w>l", opts)
+
+vim.keymap.set("t", "<A-h>", "<cmd>wincmd h<CR>", opts)
+vim.keymap.set("t", "<A-j>", "<cmd>wincmd j<CR>", opts)
+vim.keymap.set("t", "<A-k>", "<cmd>wincmd k<CR>", opts)
+vim.keymap.set("t", "<A-l>", "<cmd>wincmd l<CR>", opts)
 
 -- window operations
-vim.keymap.set('n', 's', '', opts)
-vim.keymap.set('n', 'sv', ':vsp<CR>', opts)
-vim.keymap.set('n', 'sh', ':sp<CR>', opts)
-vim.keymap.set('n', 'sc', '<C-w>c', opts)
-vim.keymap.set('n', 'so', '<C-w>o', opts)
+vim.keymap.set("n", "s", "", opts)
+vim.keymap.set("n", "sv", ":vsp<CR>", opts)
+vim.keymap.set("n", "sh", ":sp<CR>", opts)
+vim.keymap.set("n", "sc", "<C-w>c", opts)
+vim.keymap.set("n", "so", "<C-w>o", opts)
 
 -- 左右比例控制
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
@@ -43,15 +48,6 @@ vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", opts)
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
 -- 等比例
 vim.keymap.set("n", "s=", "<C-w>=", opts)
-
--- Terminal相关
-vim.keymap.set("n", "<leader>t", ":sp | terminal<CR>", opts)
-vim.keymap.set("n", "<leader>vt", ":vsp | terminal<CR>", opts)
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", opts)
-vim.keymap.set("t", "<A-h>", [[ <C-\><C-N><C-w>h ]], opts)
-vim.keymap.set("t", "<A-j>", [[ <C-\><C-N><C-w>j ]], opts)
-vim.keymap.set("t", "<A-k>", [[ <C-\><C-N><C-w>k ]], opts)
-vim.keymap.set("t", "<A-l>", [[ <C-\><C-N><C-w>l ]], opts)
 
 -----------------
 -- Visual mode --
@@ -86,7 +82,6 @@ vim.keymap.set("n", "<C-p>", ":Telescope find_files<CR>", opts)
 -- 全局搜索
 vim.keymap.set("n", "<C-f>", ":Telescope live_grep<CR>", opts)
 
-
 -- rename
 vim.keymap.set("n", "<leader>rn", ":Lspsaga rename<CR>", opts)
 -- code action
@@ -104,4 +99,5 @@ vim.keymap.set("n", "gj", ":Lspsaga diagnostic_jump_prev<CR>", opts)
 vim.keymap.set("n", "<leader>f", ":Format<CR>", opts)
 
 -- ToggleTerm
-vim.keymap.set("n", "<leader>tg", "<cmd>lua _Lazygit_toggle()<CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>T", "<cmd>ToggleTerm<CR>", opts)
+vim.keymap.set("n", "<leader>tg", "<cmd>lua _Lazygit_toggle()<CR>", opts)

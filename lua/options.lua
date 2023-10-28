@@ -1,4 +1,16 @@
-vim.opt.clipboard = "unnamedplus"
+vim.g.clipboard = {
+	name = "win32yank",
+	copy = {
+		["+"] = "win32yank.exe -i",
+		["*"] = "win32yank.exe -i",
+	},
+	paste = {
+		["+"] = "win32yank.exe -o",
+		["*"] = "win32yank.exe -o",
+	},
+}
+vim.o.clipboard = "unnamedplus"
+
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.wrap = false
 vim.opt.mouse = "a"

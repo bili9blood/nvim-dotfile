@@ -37,19 +37,15 @@ require("lazy").setup({
 	},
 
 	{
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
-		keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
-		event = "User FileOpened",
+		"LunarVim/bigfile.nvim",
+		event = { "FileReadPre", "BufReadPre", "User FileOpened" },
 	},
 
 	{
-		"lewis6991/gitsigns.nvim",
+		"numToStr/Comment.nvim",
 		config = true,
+		keys = { { "gc", mode = { "n", "v" } }, { "gb", mode = { "n", "v" } } },
 		event = "User FileOpened",
-		cmd = "Gitsigns",
 	},
 
 	{
@@ -93,6 +89,40 @@ require("lazy").setup({
 	{
 		"SmiteshP/nvim-navic",
 		event = "User FileOpened",
+		opts = {
+			click = true,
+			lsp = {
+				auto_attach = true,
+			},
+			icons = {
+				File = " ",
+				Module = " ",
+				Namespace = " ",
+				Package = " ",
+				Class = " ",
+				Method = " ",
+				Property = " ",
+				Field = " ",
+				Constructor = " ",
+				Enum = " ",
+				Interface = " ",
+				Function = " ",
+				Variable = " ",
+				Constant = " ",
+				String = " ",
+				Number = " ",
+				Boolean = " ",
+				Array = " ",
+				Object = " ",
+				Key = " ",
+				Null = " ",
+				EnumMember = " ",
+				Struct = " ",
+				Event = " ",
+				Operator = " ",
+				TypeParameter = " ",
+			},
+		},
 	},
 
 	"folke/which-key.nvim",
@@ -100,7 +130,6 @@ require("lazy").setup({
 	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
-		opts = {},
 		keys = {
 			{
 				"/",
@@ -112,7 +141,17 @@ require("lazy").setup({
 		},
 	},
 
-	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	{
+		"akinsho/toggleterm.nvim",
+		config = true,
+		opts = {
+			size = function()
+				return vim.o.columns * 0.38
+			end,
+			start_in_insert = true,
+			direction = "vertical",
+		},
+	},
 
 	{
 		"kyazdani42/nvim-tree.lua",
@@ -169,6 +208,11 @@ require("lazy").setup({
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
 
+	{
+		"nvim-lua/lsp-status.nvim",
+		event = "User FileOpened",
+	},
+
 	-- 自动补全
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/vim-vsnip",
@@ -182,9 +226,7 @@ require("lazy").setup({
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		config = function()
-			require("ibl").setup()
-		end,
+		config = true,
 	},
 	"tami5/lspsaga.nvim",
 
