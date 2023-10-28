@@ -103,3 +103,5 @@ vim.keymap.set("n", "gk", ":Lspsaga diagnostic_jump_next<CR>", opts)
 vim.keymap.set("n", "gj", ":Lspsaga diagnostic_jump_prev<CR>", opts)
 vim.keymap.set("n", "<leader>f", ":Format<CR>", opts)
 
+-- ToggleTerm
+vim.keymap.set("n", "<leader>tg", "<cmd>lua _Lazygit_toggle()<CR>", {noremap = true, silent = true})
