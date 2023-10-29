@@ -207,6 +207,10 @@ require("lazy").setup({
 	},
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
+  {
+    "jose-elias-alvarez/nvim-lsp-ts-utils",
+    dependencies="nvim-lua/plenary.nvim"
+  },
 
 	{
 		"nvim-lua/lsp-status.nvim",

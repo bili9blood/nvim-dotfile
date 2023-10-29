@@ -6,7 +6,11 @@ local servers = {
 	"rust_analyzer",
 	"clangd",
 	"cmake",
-	"volar",
+	-- "volar",
+	"cssls",
+	"tsserver",
+	"html",
+	"jsonls",
 }
 
 mason_lspconfig.setup({
@@ -17,6 +21,8 @@ for _, srvName in pairs(servers) do
 	local ok, config = pcall(require, "lsp.config." .. srvName)
 	if ok then
 		lspconfig[srvName].setup(config)
+	else
+		lspconfig[srvName].setup({})
 	end
 end
 
