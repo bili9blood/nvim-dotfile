@@ -22,4 +22,4 @@ require("lsp.setup")
 if vim.g.neovide then
 	require("neovide")
 end
-
+vim.lsp.set_log_level("debug")

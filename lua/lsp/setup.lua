@@ -6,10 +6,10 @@ local servers = {
 	"rust_analyzer",
 	"clangd",
 	"cmake",
-	-- "volar",
+	"volar",
 	"cssls",
-	"tsserver",
 	"html",
+  "emmet_ls",
 	"jsonls",
 }
 
